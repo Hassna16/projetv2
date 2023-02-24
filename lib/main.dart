@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -70,46 +71,117 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+
+        body: Align(
+          alignment: Alignment.topCenter,
+
+        child: FractionallySizedBox(
+        widthFactor: 0.5,
+
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
+
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            SizedBox.square(
+              dimension: 50.0,
+            ),
             const Text(
-              'You have pushed the button this many times:',
+              'Bienvenue !',
+
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            SizedBox.square(
+              dimension: 20.0,
             ),
+            const Text("Veuillez vous connecter ou créer un nouveau compte pour utiliser l'application.",
+              textAlign: TextAlign.center,
+
+            ),
+            SizedBox.square(
+              dimension: 50.0,
+            ),
+          TextButton(
+            onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(child: Text('E-mail',textAlign: TextAlign.center)),
+
+              ],
+            ),  style: OutlinedButton.styleFrom(
+            primary: Colors.white,
+            shape: const RoundedRectangleBorder(),
+            backgroundColor: Colors.blueGrey,
+          )),
+
+            SizedBox.square(
+              dimension: 10.0,
+            ),
+
+            TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Expanded(child: Text('Mot de passe',textAlign: TextAlign.center)),
+
+                  ],
+                ),  style: OutlinedButton.styleFrom(
+              primary: Colors.white,
+              shape: const RoundedRectangleBorder(),
+              backgroundColor: Colors.blueGrey,
+            )),
+
+            SizedBox.square(
+              dimension: 100.0,
+            ),
+
+            TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Expanded(child: Text('Se connecter',textAlign: TextAlign.center)),
+
+                  ],
+                ),  style: OutlinedButton.styleFrom(
+              primary: Colors.white,
+              shape: const RoundedRectangleBorder(),
+              backgroundColor: Colors.deepPurple,
+            )),
+
+            SizedBox.square(
+              dimension: 10.0,
+            ),
+
+            TextButton(
+                onPressed: () {},
+                child: Row(
+                  children: [
+                    Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center)),
+
+                  ],
+                ),  style: OutlinedButton.styleFrom(
+              primary: Colors.white,
+              shape: const RoundedRectangleBorder(),
+              backgroundColor: Colors.deepPurple,
+            )),
+
+            SizedBox.square(
+              dimension: 230.0,
+            ),
+
+            const Text("Mot de passe oublié",
+              textAlign: TextAlign.center,
+
+            ),
+
+
+
+
+
+
           ],
         ),
+
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+      // This trailing comma makes auto-formatting nicer for build methods.
+    ));
   }
 }
