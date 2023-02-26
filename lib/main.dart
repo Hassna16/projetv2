@@ -12,17 +12,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'STEAM',
+
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -33,14 +26,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -53,53 +38,73 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
 
-        body: Align(
+    return Scaffold(
+      backgroundColor: Colors.black87,
+      body:/*Stack (
+        children : [
+          Positioned.fill(
+            child : Image.asset(
+              "images/fonddecrannoir.jpg",
+              fit : BoxFit.cover,
+            )
+          )
+        ]
+      ),*/
+      Align(
           alignment: Alignment.topCenter,
 
         child: FractionallySizedBox(
-        widthFactor: 0.5,
+        widthFactor: 0.8,
+
 
         child: Column(
 
+
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+
             SizedBox.square(
               dimension: 50.0,
             ),
-            const Text(
-              'Bienvenue !',
+            Text( 'Bienvenue !',
+                style: TextStyle(
+                  fontWeight : FontWeight.w600,
+                  color: Colors.white,
+                  fontSize:40,
+
+
+                ),
 
             ),
             SizedBox.square(
               dimension: 20.0,
             ),
-            const Text("Veuillez vous connecter ou créer un nouveau compte pour utiliser l'application.",
+    SizedBox(
+    height:70,
+    width: 180,
+    child  : Text("Veuillez vous connecter ou créer un nouveau "
+        "compte pour utiliser l'application.",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize:15,),
               textAlign: TextAlign.center,
 
-            ),
+            )),
+
             SizedBox.square(
-              dimension: 50.0,
+              dimension: 10.0,
             ),
-          TextButton(
+          SizedBox(
+            height: 45,
+            width: 1500,
+            child  :TextButton(
             onPressed: () {},
             child: Row(
               children: [
@@ -108,66 +113,87 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),  style: OutlinedButton.styleFrom(
             primary: Colors.white,
-            shape: const RoundedRectangleBorder(),
-            backgroundColor: Colors.blueGrey,
-          )),
+            shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+            backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+          ))),
 
             SizedBox.square(
               dimension: 10.0,
             ),
+// MOT DE PASSE
+            SizedBox(
+                height: 45,
+                width: 1500,
+                child  :TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Expanded(child: Text('Mot de passe',textAlign: TextAlign.center)),
 
-            TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Expanded(child: Text('Mot de passe',textAlign: TextAlign.center)),
+                      ],
+                    ),  style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                  backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                ))),
 
-                  ],
-                ),  style: OutlinedButton.styleFrom(
-              primary: Colors.white,
-              shape: const RoundedRectangleBorder(),
-              backgroundColor: Colors.blueGrey,
-            )),
 
             SizedBox.square(
               dimension: 100.0,
             ),
 
-            TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Expanded(child: Text('Se connecter',textAlign: TextAlign.center)),
+            SizedBox(
+                height: 45,
+                width: 1500,
+                child  :TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Expanded(child: Text('Se connecter',textAlign: TextAlign.center)),
 
-                  ],
-                ),  style: OutlinedButton.styleFrom(
-              primary: Colors.white,
-              shape: const RoundedRectangleBorder(),
-              backgroundColor: Colors.deepPurple,
-            )),
+                      ],
+                    ),  style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape:  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
+                ))),
+
 
             SizedBox.square(
               dimension: 10.0,
             ),
 
-            TextButton(
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center)),
+            SizedBox(
+                height: 45,
+                width: 1500,
+                child  :TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center)),
 
-                  ],
-                ),  style: OutlinedButton.styleFrom(
-              primary: Colors.white,
-              shape: const RoundedRectangleBorder(),
-              backgroundColor: Colors.deepPurple,
-            )),
+                      ],
+                    ),  style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  side : BorderSide(color : Color.fromRGBO(97, 104, 237, 1.0)),
+                  backgroundColor: Colors.transparent,
+                ))),
 
             SizedBox.square(
-              dimension: 230.0,
+              dimension: 200.0,
             ),
 
             const Text("Mot de passe oublié",
+              style : TextStyle(
+                decoration :TextDecoration.underline,
+                color : Colors.white60,
+
+              ),
               textAlign: TextAlign.center,
 
             ),
