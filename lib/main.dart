@@ -276,7 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox.square(
                   dimension: 10.0,
                 ),
-// MOT DE PASSE
+// E-Mail
                 SizedBox(
                     height: 45,
                     width: 1500,
