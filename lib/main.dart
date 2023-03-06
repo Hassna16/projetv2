@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'STEAM',
-
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
@@ -34,14 +34,35 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
+  bool favoris = false;
+  bool star = false;
+
+
+  void Fav (){
     setState(() {
-      _counter++;
+
+
+      if (favoris){
+        favoris=false;
+      }
+      else {
+        favoris= true;
+      }
     });
   }
+  void etoile(){
+    setState(() {
 
+
+      if (star){
+        star=false;
+      }
+      else {
+        star= true;
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
 /*
@@ -209,8 +230,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     ));*/
-  //PAGE INSCRIPTION 2
-    return Scaffold(
+    //PAGE INSCRIPTION 2
+    /*return Scaffold(
         backgroundColor: Colors.black87,
         body:
         Align(
@@ -276,7 +297,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox.square(
                   dimension: 10.0,
                 ),
-// MOT DE PASSE
+// E-Mail
                 SizedBox(
                     height: 45,
                     width: 1500,
@@ -372,6 +393,72 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ),
           // This trailing comma makes auto-formatting nicer for build methods.
-        ));
+        ));*/
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor : Colors.black87,
+
+          title: Text("Accueil"),
+
+          centerTitle: false,
+          actions: [
+            IconButton(
+
+              icon: favoris ? Icon(Icons.favorite): Icon(Icons.favorite_border_outlined),
+              onPressed: Fav,
+            ),
+
+
+
+            IconButton(
+              onPressed: etoile,
+              icon: star ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
+
+            )
+          ],
+        ),
+        backgroundColor: Colors.black87,
+        body:
+        Align(
+            alignment: Alignment.topCenter,
+
+            child: FractionallySizedBox(
+                widthFactor: 0.95,
+
+
+                child: Column(
+
+
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+
+                    SizedBox.square(
+                      dimension: 10.0,
+                    ),
+                    SizedBox(
+                        height: 45,
+                        width: 2000,
+                        child  :TextButton(
+                            onPressed: () {},
+                            child: Row(
+                              children: [
+                                Expanded(child: Text('Rechercher un jeu...')),
+
+                              ],
+
+                            ),  style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                          backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                        ))),
+
+                  ],)
+
+
+
+
+
+
+            )));
   }
 }
