@@ -395,113 +395,91 @@ class _MyHomePageState extends State<MyHomePage> {
           // This trailing comma makes auto-formatting nicer for build methods.
         ));*/
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor : Colors.black87,
-
-          title: Text("Accueil"),
-
-          centerTitle: false,
-          actions: [
-            IconButton(
-
-              icon: favoris ? Icon(Icons.favorite): Icon(Icons.favorite_border_outlined),
-              onPressed: Fav,
+      appBar: AppBar(
+        backgroundColor : Colors.black87,
+        title: Text("Accueil"),
+        centerTitle: false,
+        actions: [
+          IconButton(
+            icon: favoris ? Icon(Icons.favorite): Icon(Icons.favorite_border_outlined),
+            onPressed: Fav,
+          ),
+          IconButton(
+            onPressed: etoile,
+            icon: star ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
+          )
+        ],
+      ),
+      backgroundColor: Colors.black87,
+      body:
+      Stack(
+        children : [
+        SizedBox.square(
+        dimension: 100.0,
+      ),
+      Container (
+        height: 300,
+        width: MediaQuery.of(context).size.width,
+        child :
+        Container(
+            margin: EdgeInsets.only(top:70),
+            decoration : BoxDecoration(
+                image : DecorationImage(
+                  image : NetworkImage("https://i0.wp.com/www.conseilbourse.fr/wp-content/uploads/2021/11/best-of-jeux-video-2014-top_041A02BC01617483.jpg?resize=1024%2C683&ssl=1"
+                  ),
+                  fit : BoxFit.cover,
+                )
             ),
-
-
-
-            IconButton(
-              onPressed: etoile,
-              icon: star ? Icon(Icons.star) : Icon(Icons.star_border_outlined),
-
+            child : Text('Titan Fall 2 Ultimate Edition',
+              style: TextStyle(
+                fontWeight : FontWeight.w600,
+                color: Colors.white,
+                fontSize:40,
+              ),
             )
-          ],
         ),
-        backgroundColor: Colors.black87,
-        body:
-
-
-        Stack(
-          children : [
-
-
+      ),
+      Align(
+        alignment: Alignment.topCenter,
+        child: FractionallySizedBox(
+            widthFactor: 0.95,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
             SizedBox.square(
-              dimension: 100.0,
+            dimension: 10.0,
             ),
+            SizedBox(
+                height: 45,
+                width: 2000,
+                child  :TextButton(
+                onPressed: () {},
+            child: Row(
+              children: [
+                Expanded(child: Text('Rechercher un jeu...')),
+              ],
+            ),style: OutlinedButton.styleFrom(
+        primary: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+      backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+    ))),
+/*SizedBox.square(
+dimension: 10.0,
+),
+SizedBox(
+child : Text('Titan Fall 2 Ultimate Edition',
+style: TextStyle(
+fontWeight : FontWeight.w600,
+color: Colors.white,
+fontSize:40,
+),
+)
+),*/
+    ],)
+    )),
+    ]
+    )
+    );
 
-            Container (
-
-              height: 250,
-              child :
-              Container(
-                decoration : BoxDecoration(
-
-                    image : DecorationImage(
-                        image : NetworkImage(
-                            "https://i0.wp.com/www.conseilbourse.fr/wp-content/uploads/2021/11/best-of-jeux-video-2014-top_041A02BC01617483.jpg?resize=1024%2C683&ssl=1"
-                        ),
-                            fit : BoxFit.cover,
-                    )
-                ),),
-
-
-            ),
-            Align(
-                alignment: Alignment.topCenter,
-
-                child: FractionallySizedBox(
-                    widthFactor: 0.95,
-
-
-                    child: Column(
-
-
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-
-                        SizedBox.square(
-                          dimension: 10.0,
-                        ),
-                        SizedBox(
-                            height: 45,
-                            width: 2000,
-                            child  :TextButton(
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    Expanded(child: Text('Rechercher un jeu...')),
-
-                                  ],
-
-                                ),  style: OutlinedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                              backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
-                            ))),
-
-                        SizedBox.square(
-                          dimension: 10.0,
-                        ),
-                        SizedBox(
-                          child : Text('Titan Fall 2 Ultimate Edition'),
-
-                        ),
-
-                      ],)
-
-
-
-
-
-
-                )),
-
-
-
-
-          ]
-
-        )
-       );
   }
 }
