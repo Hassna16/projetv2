@@ -414,12 +414,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body:
       Stack(
         children : [
-        SizedBox.square(
-        dimension: 100.0,
-      ),
+
       Container (
         height: 300,
         width: MediaQuery.of(context).size.width,
+
         child :
         Container(
             margin: EdgeInsets.only(top:70),
@@ -430,15 +429,48 @@ class _MyHomePageState extends State<MyHomePage> {
                   fit : BoxFit.cover,
                 )
             ),
-            child : Text('Titan Fall 2 Ultimate Edition',
+            alignment: Alignment.centerLeft,
+            child :
+            Container (
+              child :
+
+            Text("Titan Fall 2 ""Ultimate Edition",
+
               style: TextStyle(
+
                 fontWeight : FontWeight.w600,
                 color: Colors.white,
                 fontSize:40,
               ),
-            )
-        ),
+            ),)
+
+
+            ),
+
       ),
+
+      // texte descriptif image
+      /*Container (
+
+        child :
+          Text("Description"),
+
+      ),
+          Container (
+              child  :TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Expanded(child: Text('En Savoir plus',textAlign: TextAlign.center)),
+
+                    ],
+                  ),  style: OutlinedButton.styleFrom(
+                primary: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                  backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+              ))
+
+          ),*/
       Align(
         alignment: Alignment.topCenter,
         child: FractionallySizedBox(
@@ -455,9 +487,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 child  :TextButton(
                 onPressed: () {},
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(child: Text('Rechercher un jeu...')),
-              ],
+                Expanded(child: TextField(
+                    decoration : InputDecoration(
+
+                hintText: 'Rechercher un jeu...'),
+            autofocus: false,
+                cursorColor: Colors.black,
+
+                style:
+
+                TextStyle(color : Colors.black,)),
+                )],
             ),style: OutlinedButton.styleFrom(
         primary: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
