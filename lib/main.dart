@@ -415,6 +415,8 @@ class _MyHomePageState extends State<MyHomePage> {
       Stack(
         children : [
 
+
+
       Container (
         height: 300,
         width: MediaQuery.of(context).size.width,
@@ -429,48 +431,128 @@ class _MyHomePageState extends State<MyHomePage> {
                   fit : BoxFit.cover,
                 )
             ),
-            alignment: Alignment.centerLeft,
-            child :
-            Container (
-              child :
 
-            Text("Titan Fall 2 ""Ultimate Edition",
 
-              style: TextStyle(
+          child :
+              Stack(
+                children: [
 
-                fontWeight : FontWeight.w600,
-                color: Colors.white,
-                fontSize:40,
+                  PositionedDirectional(
+
+                    start: 25,
+                    top: 80,
+                    width: 250,
+
+                    child :
+
+
+
+                    Text("Titan Fall 2 ""Ultimate Edition",
+
+
+                      style: TextStyle(
+
+                        fontWeight : FontWeight.w600,
+                        color: Colors.white,
+                        fontSize:30,
+                      ),
+                    ),),
+
+                  Positioned.directional(
+                    textDirection: Directionality.of(context),
+                    start: 25,
+
+                    top: 150,
+
+                    child :
+
+                    Text("DESCRIPTION",
+
+
+
+                      style: TextStyle(
+
+                        fontWeight : FontWeight.w600,
+                        color: Colors.white,
+                        fontSize:10,
+                      ),
+                    ),),
+                  Positioned.directional(
+                      textDirection: Directionality.of(context),
+                      start: 25,
+                      top: 190,
+                      width: 150,
+
+                      child  :TextButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              Expanded(child: Text('En savoir plus',textAlign: TextAlign.center)),
+
+                            ],
+                          ),  style: OutlinedButton.styleFrom(
+                        primary: Colors.white,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                          backgroundColor:Color.fromRGBO(97, 104, 237, 1.0)
+                      ))
+                  ),]
               ),
-            ),)
-
 
             ),
 
       ),
+Padding(
+    padding: EdgeInsets.only(top:320),
+    child :
+          Wrap(
 
-      // texte descriptif image
-      /*Container (
+  children : [
+    //Meilleures Ventes
 
+    Container(
+      alignment: Alignment.centerLeft,
+
+      child :
+
+      Container (
+        padding: EdgeInsets.only(left : 25),
         child :
-          Text("Description"),
 
-      ),
-          Container (
-              child  :TextButton(
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      Expanded(child: Text('En Savoir plus',textAlign: TextAlign.center)),
 
-                    ],
-                  ),  style: OutlinedButton.styleFrom(
-                primary: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                  backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
-              ))
+        Text("Les meilleures ventes",
 
-          ),*/
+          style: TextStyle(
+            decoration :TextDecoration.underline,
+            color: Colors.white,
+            fontSize:20,
+          ),
+        ),),
+    ),
+    /*ListView.builder(
+      itemCount : 4,
+          itemBuilder : (BuildContext context, int i) {
+        return ListTile(
+            title: Text("Nom du jeu",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize:10,
+                )),
+            leading : CircleAvatar(
+              child: Text(
+                "OK",
+              ),
+            ),
+              trailing : Icon(Icons.visibility),
+          ),
+
+    ),*/
+
+  ]
+),),
+
+
+
+    //Big composant Barre recherche jeu
       Align(
         alignment: Alignment.topCenter,
         child: FractionallySizedBox(
@@ -478,9 +560,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                //Escape entre app bar et barre de recherche
             SizedBox.square(
             dimension: 10.0,
             ),
+            //Barre de recherche
             SizedBox(
                 height: 45,
                 width: 2000,
@@ -505,18 +589,7 @@ class _MyHomePageState extends State<MyHomePage> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
       backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
     ))),
-/*SizedBox.square(
-dimension: 10.0,
-),
-SizedBox(
-child : Text('Titan Fall 2 Ultimate Edition',
-style: TextStyle(
-fontWeight : FontWeight.w600,
-color: Colors.white,
-fontSize:40,
-),
-)
-),*/
+
     ],)
     )),
     ]
