@@ -65,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   @override
   Widget build(BuildContext context) {
-/*
-    return Scaffold(
+//Page de Connexion
+    /*return Scaffold(
       backgroundColor: Colors.black87,
       body:/*Stack (
         children : [
@@ -122,21 +122,37 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox.square(
               dimension: 10.0,
             ),
-          SizedBox(
-            height: 45,
-            width: 1500,
-            child  :TextButton(
-            onPressed: () {},
-            child: Row(
-              children: [
-                Expanded(child: Text('E-mail',textAlign: TextAlign.center)),
+            SizedBox(
+                height: 45,
+                width: 2000,
 
-              ],
-            ),  style: OutlinedButton.styleFrom(
-            primary: Colors.white,
-            shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-            backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
-          ))),
+                child  :TextButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(child: TextField(
+                            textAlign : TextAlign.center,
+                            decoration : InputDecoration(
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color : Colors.transparent)
+                              ),
+
+
+                                hintText: 'E-Mail',
+                            hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                            autofocus: false,
+
+                            cursorColor: Colors.white,
+
+                            ),
+                        )],
+                    ),style: OutlinedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                  backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                ))),
+
 
             SizedBox.square(
               dimension: 10.0,
@@ -144,20 +160,35 @@ class _MyHomePageState extends State<MyHomePage> {
 // MOT DE PASSE
             SizedBox(
                 height: 45,
-                width: 1500,
+                width: 2000,
+
                 child  :TextButton(
                     onPressed: () {},
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(child: Text('Mot de passe',textAlign: TextAlign.center)),
+                        Expanded(child: TextField(
+                          textAlign : TextAlign.center,
+                          obscureText: true,
+                          decoration : InputDecoration(
+                            focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color : Colors.transparent)
+                            ),
 
-                      ],
-                    ),  style: OutlinedButton.styleFrom(
+
+                            hintText: 'Mot de passe',
+                            hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                          autofocus: false,
+
+                          cursorColor: Colors.white,
+
+                        ),
+                        )],
+                    ),style: OutlinedButton.styleFrom(
                   primary: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                   backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
                 ))),
-
 
             SizedBox.square(
               dimension: 100.0,
@@ -394,6 +425,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           // This trailing comma makes auto-formatting nicer for build methods.
         ));*/
+
+    // Page Accueil
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor : Colors.black87,
