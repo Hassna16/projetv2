@@ -311,17 +311,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(
                     height: 45,
-                    width: 1500,
+                    width: 2000,
+
                     child  :TextButton(
                         onPressed: () {},
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Text("Nom d'utilisateur",textAlign: TextAlign.center)),
+                            Expanded(child: TextField(
+                              textAlign : TextAlign.center,
+                              decoration : InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color : Colors.transparent)
+                                ),
 
-                          ],
-                        ),  style: OutlinedButton.styleFrom(
+
+                                hintText: "Nom d'utilisateur",
+                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                              autofocus: false,
+
+                              cursorColor: Colors.white,
+
+                            ),
+                            )],
+                        ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
-                      shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                       backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
                     ))),
 
@@ -331,15 +346,30 @@ class _MyHomePageState extends State<MyHomePage> {
 // E-Mail
                 SizedBox(
                     height: 45,
-                    width: 1500,
+                    width: 2000,
+
                     child  :TextButton(
                         onPressed: () {},
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Text('E-Mail',textAlign: TextAlign.center)),
+                            Expanded(child: TextField(
+                              textAlign : TextAlign.center,
+                              decoration : InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color : Colors.transparent)
+                                ),
 
-                          ],
-                        ),  style: OutlinedButton.styleFrom(
+
+                                hintText: 'E-Mail',
+                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                              autofocus: false,
+
+                              cursorColor: Colors.white,
+
+                            ),
+                            )],
+                        ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                       backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
@@ -352,15 +382,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 SizedBox(
                     height: 45,
-                    width: 1500,
+                    width: 2000,
+
                     child  :TextButton(
                         onPressed: () {},
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Text('Mot de passe',textAlign: TextAlign.center)),
+                            Expanded(child: TextField(
+                              textAlign : TextAlign.center,
+                              obscureText: true,
+                              decoration : InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color : Colors.transparent)
+                                ),
 
-                          ],
-                        ),  style: OutlinedButton.styleFrom(
+
+                                hintText: 'Mot de passe',
+                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                              autofocus: false,
+
+                              cursorColor: Colors.white,
+
+                            ),
+                            )],
+                        ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                       backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
@@ -373,15 +419,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 SizedBox(
                     height: 45,
-                    width: 1500,
+                    width: 2000,
+
                     child  :TextButton(
                         onPressed: () {},
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Text('Vérification du mot de passe',textAlign: TextAlign.center)),
+                            Expanded(child: TextField(
+                              textAlign : TextAlign.center,
+                              obscureText: true,
+                              decoration : InputDecoration(
+                                focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color : Colors.transparent)
+                                ),
 
-                          ],
-                        ),  style: OutlinedButton.styleFrom(
+
+                                hintText: 'Vérification du mot de passe',
+                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                              autofocus: false,
+
+                              cursorColor: Colors.white,
+
+                            ),
+                            )],
+                        ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                       backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
