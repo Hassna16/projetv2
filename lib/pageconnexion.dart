@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projetv2/pageaccueil.dart';
 import 'package:projetv2/pageinscription.dart';
 
+
 class Connexion extends StatefulWidget {
   const Connexion({super.key, required this.title});
 
@@ -61,10 +62,10 @@ class _ConnexionState extends State<Connexion> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
 
-            SizedBox.square(
+            const SizedBox.square(
               dimension: 50.0,
             ),
-            Text( 'Bienvenue !',
+            const Text( 'Bienvenue !',
                 style: TextStyle(
                   fontWeight : FontWeight.w600,
                   color: Colors.white,
@@ -74,10 +75,10 @@ class _ConnexionState extends State<Connexion> {
                 ),
 
             ),
-            SizedBox.square(
+            const SizedBox.square(
               dimension: 20.0,
             ),
-    SizedBox(
+    const SizedBox(
     height:70,
     width: 180,
     child  : Text("Veuillez vous connecter ou créer un nouveau "
@@ -100,7 +101,7 @@ class _ConnexionState extends State<Connexion> {
                     onPressed: () {},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Expanded(child: TextField(
                             textAlign : TextAlign.center,
                             decoration : InputDecoration(
@@ -172,7 +173,7 @@ class _ConnexionState extends State<Connexion> {
 
                         ) {Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) =>  Accueil(title: 'Accueil')),
+                      MaterialPageRoute(builder: (context) => Accueil (title: 'Accueil')),
                     );},
                     child: Row(
                       children: [
@@ -220,6 +221,7 @@ class _ConnexionState extends State<Connexion> {
               dimension: 200.0,
             ),
 
+
             const Text("Mot de passe oublié",
               style : TextStyle(
                 decoration :TextDecoration.underline,
@@ -240,4 +242,8 @@ class _ConnexionState extends State<Connexion> {
 
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
-    ));}}
+    ),
+
+    );}
+
+}
