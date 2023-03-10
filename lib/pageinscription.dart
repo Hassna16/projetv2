@@ -62,7 +62,7 @@ class _InscriptionState extends State<Inscription> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
 
-                SizedBox.square(
+                const SizedBox.square(
                   dimension: 50.0,
                 ),
                 Text( 'Inscription',
