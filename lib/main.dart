@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projetv2/pageconnexion.dart';
+//import 'testgpt.dart';
 
 
 void main() {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const Connexion(title: 'Connexion'),
+      home : Connexion(  title: "Connexion",),
+      //home:  Appli( ),Pour tester codes chatgpt
 
 
     );

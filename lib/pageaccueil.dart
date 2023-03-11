@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projetv2/wishlist.dart';
+
 
 class Accueil extends StatefulWidget {
   const Accueil({super.key, required this.title});
@@ -74,9 +76,11 @@ class _AccueilState extends State<Accueil> {
   }
 
   void etoile() {
-    setState(() {
-      _star = !_star;
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Wishlist (title: 'Wishlist')),
+    );
+
   }
 }
 

@@ -218,7 +218,7 @@ class _ConnexionState extends State<Connexion> {
                 ))),
 
             SizedBox.square(
-              dimension: 200.0,
+              dimension: 180.0,
             ),
 
 
