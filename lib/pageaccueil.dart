@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projetv2/wishlist.dart';
+import 'package:projetv2/like.dart';
+import 'package:projetv2/description.dart';
 
 
 class Accueil extends StatefulWidget {
@@ -70,9 +72,10 @@ class _AccueilState extends State<Accueil> {
   }
 
   void fav() {
-    setState(() {
-      _favoris = !_favoris;
-    });
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Like (title: 'Like')),
+    );
   }
 
   void etoile() {
@@ -293,7 +296,12 @@ class GameItem extends StatelessWidget {
                         children: [
 
                           TextButton(
-                              onPressed: () {},  style: OutlinedButton.styleFrom(
+                              onPressed: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Description (title: 'Description')),
+                              );
+
+                              },  style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                               backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0),
                              minimumSize: const Size(100,100)

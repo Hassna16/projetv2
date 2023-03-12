@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home : Connexion(  title: "Connexion",),
-      //home:  Appli( ),Pour tester codes chatgpt
+      //home:  FirstPage(),//Pour tester codes chatgpt,
 
 
     );
