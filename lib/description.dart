@@ -16,8 +16,8 @@ class Description extends StatefulWidget {
 
 class _DescriptionState extends State<Description> {
   final ScrollController _controller = ScrollController();
-  bool _favoris = false;
-  bool _star = false;
+  final bool _favoris = false;
+  final bool _star = false;
 
   @override
   Widget build(BuildContext context) {

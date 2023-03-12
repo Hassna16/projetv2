@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home : Connexion(  title: "Connexion",),
+      home : const Connexion(  title: "Connexion",),
       //home:  FirstPage(),//Pour tester codes chatgpt,
 
 
