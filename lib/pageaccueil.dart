@@ -255,7 +255,7 @@ class GameItem extends StatelessWidget {
 
                               decoration : const BoxDecoration(
                                   image : DecorationImage(
-                                    image : NetworkImage("https://i0.wp.com/www.conseilbourse.fr/wp-content/uploads/2021/11/best-of-jeux-video-2014-top_041A02BC01617483.jpg?resize=1024%2C683&ssl=1"
+                                    image : NetworkImage("https://m.media-amazon.com/images/I/71h-xYqRKmL._AC_SX342_SY445_.jpg"
                                     ),
                                     fit : BoxFit.cover,
                                   )
@@ -301,7 +301,8 @@ class GameItem extends StatelessWidget {
                                 MaterialPageRoute(builder: (context) => Description (title: 'Description')),
                               );
 
-                              },  style: OutlinedButton.styleFrom(
+                              },
+                              style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                               backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0),
                              minimumSize: const Size(100,100)
