@@ -298,7 +298,7 @@ class GameItem extends StatelessWidget {
                           TextButton(
                               onPressed: () {Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Description (title: 'Description')),
+                                MaterialPageRoute(builder: (context) => const Description (title: 'Description')),
                               );
 
                               },

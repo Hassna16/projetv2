@@ -173,48 +173,58 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return    Padding(
-        padding:  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+        padding:  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
 
         child :
        Expanded(child:
               Row(
           children :[
+            ElevatedButton(
 
-        TextButton(
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Description(title: 'Description')),
+              );
 
-          onPressed: () {Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Description(title: 'Description')),
-          );
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
+                shape : MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                    )
+                ),
 
-          },
-          child: Text ("DESCRIPTION"),
-          style: OutlinedButton.styleFrom(
-            primary: Colors.white,
-            shape:  RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(2),
-              side : BorderSide(color: Color.fromRGBO(97, 104, 237, 1.0))
+
+
+              ),
+              child: const Text ("DESCRIPTION"),
             ),
-            backgroundColor:Colors.transparent,
+            ElevatedButton(
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Avis(title: 'Avis')),
+              );
 
-          ) ,),
-          TextButton(
-            onPressed: () {Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => Avis(title: 'Avis')),
-            );
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
+                shape : MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                      side: const BorderSide(color : Colors.deepPurple),
+                    )
+                ),
 
-            },
-            child: Text ("AVIS"),
-            style: OutlinedButton.styleFrom(
-              primary: Colors.white,
-              shape:  RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(2)),
-              backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
-
-            ) ,)],),),);
+              ),
+              child:
+              const Text( "AVIS"),
+            )],),),);
   }
 }
+
 
 class Explication extends StatelessWidget {
   const Explication({Key? key}) : super(key: key);
@@ -222,12 +232,10 @@ class Explication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      Column (
-    children : const [
-      SizedBox(
-        height: 20,
-      ),
+      Padding(
+        padding:  EdgeInsets.all(20),
 
+     child :
         Text("Concernant le scénario, la toute première bande-annonce du jeu nous a permis d'en apprendre davantage sur ce point. Oui, Kratos et son fiston Atreus sont toujours chassés par les divinités nordiques, particulièrement déterminés à se venger après avoir perdu l'un de leurs. Le garçon a visiblement grandi, ce qui suggère qu'un certain temps sépare les deux épisodes. Reste que l'on retrouve des personnages familiers du premier opus comme Mimir, les nains Brokk et Sindri ou encore Freya, autrefois épouse d'Odin. Et accessoirement mère de Baldur."
 
         "Rappelons par ailleurs que dans la mythologie nordique, Ragnarok renvoie à une prophétie de fin du monde, comprenant un hiver de trois ans sans soleil, des catastrophes naturelles et une grande bataille lors de laquelle dieux, valkyries et monstres doivent s'affronter. De fait et comme l'indique le nom du titre, les aventures nordiques de Kratos s'arrêteront avec cet épisode."
@@ -236,10 +244,11 @@ class Explication extends StatelessWidget {
 
           "Nous savons également que Kratos et Atreus devront parcourir les Neuf royaumes à la recherche de réponses pour empêcher cette fin du monde. Pendant ce temps, les forces d'Asgard, menées par Freya, se préparent à l'affrontement alors que l'hiver touche à sa fin. Justement, en parlant de fin, celle-ci s'annonce dantesque. Sur Twitter, Cory Barlog a fait savoir que les 30 dernières minutes du jeu sont particulièrement épiques…"
        ,
+      textAlign: TextAlign.justify,
       style: TextStyle(color: Colors.white),
 
         )
-      ])
+      )
     ;
 
   }

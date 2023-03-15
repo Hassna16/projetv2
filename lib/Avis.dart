@@ -50,17 +50,22 @@ class _AvisState extends State<Avis> {
         controller: _controller,
         child: CustomScrollView(
           controller: _controller,
-          slivers: const [
+          slivers:  [
 
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: HeaderItem(),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Detail(),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Avisperso(),
 
+            ),
+            SliverList(
+              delegate: SliverChildListDelegate(
+                List.generate(100, (index) => const Avisperso()),
+              ),
             ),
 
 
@@ -174,45 +179,57 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return    Padding(
-        padding:  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+      padding:  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
 
-        child :
-        ButtonBar(
-          children :[
+      child :
+      Expanded(child:
+      Row(
+        children :[
 
-            TextButton(
 
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Description(title: 'Description')),
-              );
+          ElevatedButton(
 
-              },
-              child: Text ("DESCRIPTION"),
-              style: OutlinedButton.styleFrom(
-                primary: Colors.white,
-                shape:  RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
+            onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Description(title: 'Description')),
+            );
 
-              ) ,),
-            TextButton(
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Avis(title: 'Avis')),
-              );
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+              minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
+              shape : MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                    side: const BorderSide(color : Colors.deepPurple),
+                  )
+              ),
 
-              },
-              child: Text ("AVIS"),
-              style: OutlinedButton.styleFrom(
-                primary: Colors.white,
-                shape:  RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
+            ),
+            child: const Text ("DESCRIPTION"),
+          ),
+          ElevatedButton(
+            onPressed: () {Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Avis(title: 'Avis')),
+            );
 
-              ) ,)],));
+            },
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
+              minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
+              shape : MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  )
+              ),
+
+
+
+            ),
+            child:
+            const Text( "AVIS"),
+          )],),),);
   }
 }
 
@@ -223,7 +240,7 @@ class Avisperso extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Card(
-      color: Colors.black54,
+      color: Colors.black45,
 
 
       child:
@@ -242,7 +259,7 @@ class Avisperso extends StatelessWidget {
                           children :[
                             Column(
                               children :[
-                                SizedBox (
+                                const SizedBox (
                                   height: 80,
                                   width: 80,
 
@@ -259,17 +276,25 @@ class Avisperso extends StatelessWidget {
 
                            Column(
 
-                                children : const [
-                                  SizedBox.square(
-                                    dimension: 20,
+                                children :  [
+                                  Row(
+                                    children: <Widget>[
+                                      Text("Nom de l'utilisateur",
+                                          style : TextStyle(color:Colors.white, fontSize: 15,)),
+                                      SizedBox(
+                                        width: 200,
+                                      ),
 
+
+                                      Icon(Icons.star, color: Colors.yellow),
+                                      Icon(Icons.star, color: Colors.yellow),
+                                      Icon(Icons.star, color: Colors.yellow),
+                                      Icon(Icons.star, color: Colors.yellow),
+                                      Icon(Icons.star_border, color: Colors.yellow),
+                                    ],
                                   ),
 
-
-                                  Text("Nom de l'utilisateur",
-                                      style : TextStyle(color:Colors.white, fontSize: 15)),
-                                  Text("Décevant par rapport aux deux premiers : c'est devenu trop coloré, Thor se prend moins au sérieux, il y a trop d'humour décalé... On croit moins à l'univers. Alan Taylor a été bien meilleur sur la réalisation du deuxième épisode. "
-                                      "Mais Taika Waititi arrivera à faire encore bien pire sur le 4e épisode... Bravo champion, t'as tué la licence. Sinon, va faire de vrais films pour enfant et arrête de nous les briser.d moins au sérieux, il y a trop d'humour décalé.",
+                                  Text("votre avis.",
                                       style : TextStyle(color:Colors.white, fontSize: 10)),
 
                                 ]
