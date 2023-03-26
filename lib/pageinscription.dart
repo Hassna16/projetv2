@@ -14,42 +14,38 @@ class Inscription extends StatefulWidget {
 
 class _InscriptionState extends State<Inscription> {
 
-  bool favoris = false;
-  bool star = false;
 
-
-  void Fav (){
-    setState(() {
-
-
-      if (favoris){
-        favoris=false;
-      }
-      else {
-        favoris= true;
-      }
-    });
-  }
-  void etoile(){
-    setState(() {
-
-
-      if (star){
-        star=false;
-      }
-      else {
-        star= true;
-      }
-    });
-  }
   @override
   Widget build(BuildContext context) {
 
 
     return Scaffold(
         backgroundColor: Colors.black87,
-        body:
-        Align(
+        body:Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/fonddecran.png"),
+                fit: BoxFit.cover,)),
+          child:
+          Column(
+              children : const [
+                titre_page(),
+                champs_inscription(),
+                btn_inscription(),
+
+              ]),
+        ),)
+    ;}
+
+}
+
+
+class titre_page extends StatelessWidget {
+  const titre_page({Key? key}) : super(key: key);
+
+        @override
+        Widget build(BuildContext context) {
+        return Align(
           alignment: Alignment.topCenter,
 
           child: FractionallySizedBox(
@@ -67,9 +63,10 @@ class _InscriptionState extends State<Inscription> {
                 ),
                 Text( 'Inscription',
                   style: TextStyle(
-                    fontWeight : FontWeight.w600,
+                    fontWeight : FontWeight.bold,
+                    fontFamily: "Google Sans",
                     color: Colors.white,
-                    fontSize:40,
+                    fontSize:30.53,
 
 
                   ),
@@ -85,7 +82,8 @@ class _InscriptionState extends State<Inscription> {
                         "afin que vos listes soient sauvegardées.",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize:15,),
+                        fontFamily: "Proxima Nova",
+                        fontSize:15.27,),
                       textAlign: TextAlign.center,
 
                     )),
@@ -93,6 +91,29 @@ class _InscriptionState extends State<Inscription> {
                 SizedBox.square(
                   dimension: 30.0,
                 ),
+        ]),),);
+        }}
+
+class champs_inscription extends StatelessWidget {
+  const champs_inscription({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topCenter,
+
+      child: FractionallySizedBox(
+        widthFactor: 0.8,
+
+
+        child: Column(
+
+
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+
+
+
                 SizedBox(
                     height: 45,
                     width: 2000,
@@ -111,7 +132,7 @@ class _InscriptionState extends State<Inscription> {
 
 
                                 hintText: "Nom d'utilisateur",
-                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                                hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova', fontSize:15.24), ),
                               autofocus: false,
 
                               cursorColor: Colors.white,
@@ -121,7 +142,7 @@ class _InscriptionState extends State<Inscription> {
                         ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
                     ))),
 
                 SizedBox.square(
@@ -146,7 +167,7 @@ class _InscriptionState extends State<Inscription> {
 
 
                                 hintText: 'E-Mail',
-                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                                hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova', fontSize:15.24), ),
                               autofocus: false,
 
                               cursorColor: Colors.white,
@@ -156,7 +177,7 @@ class _InscriptionState extends State<Inscription> {
                         ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
                     ))),
 
 
@@ -183,7 +204,7 @@ class _InscriptionState extends State<Inscription> {
 
 
                                 hintText: 'Mot de passe',
-                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                                hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova', fontSize:15.24), ),
                               autofocus: false,
 
                               cursorColor: Colors.white,
@@ -193,7 +214,7 @@ class _InscriptionState extends State<Inscription> {
                         ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
                     ))),
 
 
@@ -220,7 +241,7 @@ class _InscriptionState extends State<Inscription> {
 
 
                                 hintText: 'Vérification du mot de passe',
-                                hintStyle : TextStyle(color: Colors.white, fontSize: 14), ),
+                                hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova', fontSize:15.24), ),
                               autofocus: false,
 
                               cursorColor: Colors.white,
@@ -230,12 +251,34 @@ class _InscriptionState extends State<Inscription> {
                         ),style: OutlinedButton.styleFrom(
                       primary: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
                     ))),
 
                 SizedBox.square(
                   dimension: 80.0,
                 ),
+          ]),),);
+  }}
+
+
+class btn_inscription extends StatelessWidget {
+  const btn_inscription({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.topCenter,
+
+      child: FractionallySizedBox(
+        widthFactor: 0.8,
+
+
+        child: Column(
+
+
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+
 
                 SizedBox(
                     height: 45,
@@ -250,7 +293,7 @@ class _InscriptionState extends State<Inscription> {
                             Expanded(child: Text("S'inscrire",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize:17,),
+                                    fontFamily: 'Proxima Nova', fontSize:15.24),
                                 textAlign: TextAlign.center)
                             ),
 
@@ -261,16 +304,12 @@ class _InscriptionState extends State<Inscription> {
                       shape:  RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
+                      backgroundColor:Color.fromRGBO(99, 106, 246, 1.0),
                     ))),
 
 
 
 
 
-              ],
-            ),
-
-          ),
-          // This trailing comma makes auto-formatting nicer for build methods.
-        ));}}
+          ]),),);
+  }}

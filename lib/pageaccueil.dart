@@ -25,9 +25,9 @@ class _AccueilState extends State<Accueil> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
         title: const Text("Accueil",
-            style: TextStyle(color: Colors.white, fontFamily: 'GoogleSans-Bold',
+            style: TextStyle(color: Colors.white, fontFamily: 'Google Sans', fontWeight: FontWeight.bold,
               fontSize:18, )),
         centerTitle: false,
         actions: [
@@ -45,7 +45,7 @@ class _AccueilState extends State<Accueil> {
           )
         ],
       ),
-      backgroundColor: Colors.black87,
+      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
       body: Scrollbar(
         controller: _controller,
         child: CustomScrollView(
@@ -94,7 +94,12 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return SizedBox(
+        width: 100,
+        height: 50,
+        child:
+      TextField(
+
       decoration: InputDecoration(
         suffixIcon: IconButton(
             onPressed: (){
@@ -105,12 +110,12 @@ class SearchBar extends StatelessWidget {
             },
             icon: const Icon(Icons.search)),
           filled: true,
-          fillColor: Colors.black87,
+          fillColor:  Color.fromRGBO(30, 38, 44, 1.0),
           focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.transparent),
           ),
           hintText: 'Rechercher un jeu...',
-          hintStyle : const TextStyle(color: Colors.white, fontFamily: 'ProximaNova-Regular',
+          hintStyle : const TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
             fontSize:15.27, ),
       ),
 
@@ -119,7 +124,7 @@ class SearchBar extends StatelessWidget {
       style: const TextStyle(
         color: Colors.white,
       ),
-    );
+    ));
   }
 }
 
@@ -161,7 +166,7 @@ class HeaderItem extends StatelessWidget {
                     style: TextStyle(
                       fontWeight : FontWeight.w600,
                       color: Colors.white,
-                      fontFamily: 'ProximaNova-Bold',
+                      fontFamily: 'Proxima Nova',
                       fontSize:18.79,
                     ),
                   ),),
@@ -182,7 +187,7 @@ class HeaderItem extends StatelessWidget {
 
                       fontWeight : FontWeight.w600,
                       color: Colors.white,
-                      fontFamily: 'ProximaNova-Regular',
+                      fontFamily: 'Proxima Nova',
                       fontSize:11.74,
                     ),
                   ),),
@@ -202,7 +207,7 @@ class HeaderItem extends StatelessWidget {
                           children: const [
                             Expanded(child: Text('En savoir plus',textAlign: TextAlign.center,
                                 style : TextStyle(
-                                  fontFamily: 'ProximaNova-Regular',
+                                  fontFamily: 'Proxima Nova',
                                   fontSize: 18.79,
 
                                 ),)),
@@ -238,7 +243,7 @@ class GameItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Card(
-      color: Colors.black54,
+      color: Color.fromRGBO(57, 72, 80, 1.0),
 
 
       child:

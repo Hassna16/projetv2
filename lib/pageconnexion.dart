@@ -19,15 +19,20 @@ class _ConnexionState extends State<Connexion> {
   Widget build(BuildContext context) {
 //Page de Connexion
     return Scaffold(
-      backgroundColor: Colors.black87,
-      body:
-          Column(
+
+      body:Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/fonddecran.png"),
+              fit: BoxFit.cover,)),
+        child:
+        Column(
             children : const [
               titre_page(),
               champs_connexion(),
               mdp(),
-          ]),
-     )
+            ]),
+      ),)
     ;}
 
 }
@@ -54,7 +59,7 @@ class titre_page extends StatelessWidget {
             ),
             Text( 'Bienvenue !',
               style: TextStyle(
-                fontFamily: 'GoogleSans-Bold',
+                fontFamily: 'Google Sans',
                 fontWeight : FontWeight.w600,
                 color: Colors.white,
                 fontSize:30.53,
@@ -65,13 +70,13 @@ class titre_page extends StatelessWidget {
               dimension: 20.0,
             ),
             SizedBox(
-                height:70,
-                width: 180,
+                height:60,
+                width: 190,
                 child  : Text("Veuillez vous connecter ou créer un nouveau "
                     "compte pour utiliser l'application.",
                   style: TextStyle(
                     color: Colors.white,
-                    fontFamily: 'ProximaNova-Regular',
+                    fontFamily: 'Proxima Nova',
                     fontSize:15.27,
                   ),
                   textAlign: TextAlign.center,
@@ -123,9 +128,10 @@ borderSide: BorderSide(color : Colors.transparent)
 ),
 
 
-hintText: 'E-Mail',
-hintStyle : TextStyle(color: Colors.white, fontFamily: 'ProximaNova-Regular',
+hintText: 'E-mail',
+hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
   fontSize:15.24), ),
+
 autofocus: false,
 
 cursorColor: Colors.white,
@@ -135,7 +141,7 @@ cursorColor: Colors.white,
 ),style: OutlinedButton.styleFrom(
 primary: Colors.white,
 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
 ))),
 
 
@@ -162,7 +168,7 @@ borderSide: BorderSide(color : Colors.transparent)
 
 
 hintText: 'Mot de passe',
-hintStyle : TextStyle(color: Colors.white, fontFamily: 'ProximaNova-Regular',
+hintStyle : TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
   fontSize:15.24), ),
 autofocus: false,
 
@@ -173,7 +179,7 @@ cursorColor: Colors.white,
 ),style: OutlinedButton.styleFrom(
 primary: Colors.white,
 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-backgroundColor: Color.fromRGBO(60, 63, 65, 1.0),
+  backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
 ))),
 
 SizedBox.square(
@@ -192,7 +198,8 @@ MaterialPageRoute(builder: (context) => Accueil (title: 'Accueil')),
 );},
 child: Row(
 children: [
-Expanded(child: Text('Se connecter',textAlign: TextAlign.center)),
+Expanded(child: Text('Se connecter',textAlign: TextAlign.center, style:
+TextStyle(fontFamily: 'Proxima Nova', fontSize:15.24))),
 
 ],
 ),  style: OutlinedButton.styleFrom(
@@ -200,7 +207,7 @@ primary: Colors.white,
 shape:  RoundedRectangleBorder(
 borderRadius: BorderRadius.circular(5),
 ),
-backgroundColor:Color.fromRGBO(97, 104, 237, 1.0),
+backgroundColor:Color.fromRGBO(99, 106, 246, 1.0),
 ))),
 
 
@@ -220,7 +227,8 @@ MaterialPageRoute(builder: (context) =>  Inscription(title: 'Inscription')),
 },
 child: Row(
 children: [
-Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center)),
+Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center, style:
+TextStyle(fontFamily: 'Proxima Nova', fontSize:15.24))),
 
 ],
 ),  style: OutlinedButton.styleFrom(
@@ -228,7 +236,7 @@ primary: Colors.white,
 shape: RoundedRectangleBorder(
 borderRadius: BorderRadius.circular(5),
 ),
-side : BorderSide(color : Color.fromRGBO(97, 104, 237, 1.0)),
+side : BorderSide(color : Color.fromRGBO(99, 106, 246, 1.0)),
 backgroundColor: Colors.transparent,
 ))),
 
