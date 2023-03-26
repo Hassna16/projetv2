@@ -64,7 +64,7 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("liste de souhait"
+    return const Text("liste de souhait", style : TextStyle( fontFamily:"GoogleSans-Bold", fontSize: 18 )
 
     );
 
@@ -168,11 +168,11 @@ class GameItem extends StatelessWidget {
 
 
                                   Text("Nom du jeu",
-                                      style : TextStyle(color:Colors.white, fontSize: 15)),
+                                      style : TextStyle(color:Colors.white, fontFamily: "ProximalNova-Regular",fontSize: 15.27)),
                                   Text("Nom de l'éditeur",
-                                      style : TextStyle(color:Colors.white, fontSize: 10)),
+                                      style : TextStyle(color:Colors.white, fontFamily: "ProximalNova-Regular",fontSize: 12)),
                                   Text("Prix : 10,00€",
-                                      style : TextStyle(color:Colors.white, fontSize: 10, decoration: TextDecoration.underline)),
+                                      style : TextStyle(color:Colors.white,fontFamily: "ProximalNova-Regular",fontSize: 12, decoration: TextDecoration.underline)),
 
                                 ]
                             ),],),),

@@ -28,7 +28,9 @@ class _AvisState extends State<Avis> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text("Détail du jeu "),
+        title: const Text("Détail du jeu ", style : TextStyle( fontFamily: "GoogleSans-Bold",
+          fontSize: 18
+        ),),
         centerTitle: false,
         actions: [
           IconButton(
@@ -163,9 +165,9 @@ class HeaderItem extends StatelessWidget {
 
                     children : const [
                       Text("Nom du jeu",
-                          style : TextStyle(color:Colors.white, fontSize: 15)),
+                          style : TextStyle(color:Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 15.26)),
                       Text("Nom de l'éditeur",
-                          style : TextStyle(color:Colors.white, fontSize: 10)),
+                          style : TextStyle(color:Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 12)),
 
                     ]
                 ),],),),),],);
@@ -182,11 +184,11 @@ class Detail extends StatelessWidget {
       padding:  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
 
       child :
-      Expanded(child:
+
       Row(
         children :[
 
-
+          Expanded(child:
           ElevatedButton(
 
             onPressed: () {Navigator.push(
@@ -206,8 +208,10 @@ class Detail extends StatelessWidget {
               ),
 
             ),
-            child: const Text ("DESCRIPTION"),
-          ),
+            child: const Text ("DESCRIPTION", style :
+            TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+          ),),
+          Expanded(child:
           ElevatedButton(
             onPressed: () {Navigator.push(
               context,
@@ -228,8 +232,9 @@ class Detail extends StatelessWidget {
 
             ),
             child:
-            const Text( "AVIS"),
-          )],),),);
+            const Text( "AVIS", style :
+            TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),),
+          )],),);
   }
 }
 
@@ -295,7 +300,7 @@ class Avisperso extends StatelessWidget {
                                   ),
 
                                   Text("votre avis.",
-                                      style : TextStyle(color:Colors.white, fontSize: 10)),
+                                      style : TextStyle(color:Colors.white, fontFamily: "ProximaNova-Regular",fontSize: 15.26)),
 
                                 ]
                             ),],),],)),

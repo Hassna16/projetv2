@@ -176,9 +176,9 @@ class Detail extends StatelessWidget {
         padding:  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
 
         child :
-       Expanded(child:
               Row(
           children :[
+            Expanded(child:
             ElevatedButton(
 
               onPressed: () {Navigator.push(
@@ -199,8 +199,10 @@ class Detail extends StatelessWidget {
 
 
               ),
-              child: const Text ("DESCRIPTION"),
-            ),
+              child: const Text ("DESCRIPTION",style :
+              TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+            ),),
+            Expanded(child:
             ElevatedButton(
               onPressed: () {Navigator.push(
                 context,
@@ -220,8 +222,9 @@ class Detail extends StatelessWidget {
 
               ),
               child:
-              const Text( "AVIS"),
-            )],),),);
+              const Text( "AVIS",style :
+              TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+            )),],),);
   }
 }
 
@@ -245,7 +248,7 @@ class Explication extends StatelessWidget {
           "Nous savons également que Kratos et Atreus devront parcourir les Neuf royaumes à la recherche de réponses pour empêcher cette fin du monde. Pendant ce temps, les forces d'Asgard, menées par Freya, se préparent à l'affrontement alors que l'hiver touche à sa fin. Justement, en parlant de fin, celle-ci s'annonce dantesque. Sur Twitter, Cory Barlog a fait savoir que les 30 dernières minutes du jeu sont particulièrement épiques…"
        ,
       textAlign: TextAlign.justify,
-      style: TextStyle(color: Colors.white),
+      style: TextStyle(color: Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 15.26),
 
         )
       )

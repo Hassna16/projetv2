@@ -26,7 +26,9 @@ class _AccueilState extends State<Accueil> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: const Text("Accueil"),
+        title: const Text("Accueil",
+            style: TextStyle(color: Colors.white, fontFamily: 'GoogleSans-Bold',
+              fontSize:18, )),
         centerTitle: false,
         actions: [
           IconButton(
@@ -108,7 +110,8 @@ class SearchBar extends StatelessWidget {
             borderSide: BorderSide(color: Colors.transparent),
           ),
           hintText: 'Rechercher un jeu...',
-          hintStyle : const TextStyle(color: Colors.white ),
+          hintStyle : const TextStyle(color: Colors.white, fontFamily: 'ProximaNova-Regular',
+            fontSize:15.27, ),
       ),
 
       autofocus: false,
@@ -158,7 +161,8 @@ class HeaderItem extends StatelessWidget {
                     style: TextStyle(
                       fontWeight : FontWeight.w600,
                       color: Colors.white,
-                      fontSize:30,
+                      fontFamily: 'ProximaNova-Bold',
+                      fontSize:18.79,
                     ),
                   ),),
 
@@ -178,7 +182,8 @@ class HeaderItem extends StatelessWidget {
 
                       fontWeight : FontWeight.w600,
                       color: Colors.white,
-                      fontSize:10,
+                      fontFamily: 'ProximaNova-Regular',
+                      fontSize:11.74,
                     ),
                   ),),
                 Positioned.directional(
@@ -191,10 +196,16 @@ class HeaderItem extends StatelessWidget {
                         onPressed: () {},  style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                         backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0)
+
                     ),
                         child: Row(
                           children: const [
-                            Expanded(child: Text('En savoir plus',textAlign: TextAlign.center)),
+                            Expanded(child: Text('En savoir plus',textAlign: TextAlign.center,
+                                style : TextStyle(
+                                  fontFamily: 'ProximaNova-Regular',
+                                  fontSize: 18.79,
+
+                                ),)),
 
                           ],
                         ))
@@ -280,11 +291,11 @@ class GameItem extends StatelessWidget {
 
 
                             Text("Nom du jeu",
-                                style : TextStyle(color:Colors.white, fontSize: 15)),
+                                style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'ProximaNova-Regular',)),
                             Text("Nom de l'éditeur",
-                                style : TextStyle(color:Colors.white, fontSize: 10)),
+                                style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'ProximaNova-Regular',)),
                             Text("Prix : 10,00€",
-                                style : TextStyle(color:Colors.white, fontSize: 10, decoration: TextDecoration.underline)),
+                                style : TextStyle(color:Colors.white, fontSize: 12,fontFamily: 'ProximaNova-Regular', decoration: TextDecoration.underline)),
 
                           ]
                       ),],),),
