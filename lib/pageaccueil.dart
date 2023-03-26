@@ -25,7 +25,7 @@ class _AccueilState extends State<Accueil> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
         title: const Text("Accueil",
             style: TextStyle(color: Colors.white, fontFamily: 'Google Sans', fontWeight: FontWeight.bold,
               fontSize:18, )),
@@ -45,7 +45,7 @@ class _AccueilState extends State<Accueil> {
           )
         ],
       ),
-      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
+      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
       body: Scrollbar(
         controller: _controller,
         child: CustomScrollView(
@@ -94,11 +94,13 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: 100,
-        height: 50,
-        child:
+    return
+    SizedBox(
+      height:35.23,
+    width: 352.29,
+    child :
       TextField(
+
 
       decoration: InputDecoration(
         suffixIcon: IconButton(
@@ -110,13 +112,14 @@ class SearchBar extends StatelessWidget {
             },
             icon: const Icon(Icons.search)),
           filled: true,
-          fillColor:  Color.fromRGBO(30, 38, 44, 1.0),
+          fillColor:  const  Color.fromRGBO(0, 3, 100, 1.0),
           focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.transparent),
           ),
           hintText: 'Rechercher un jeu...',
           hintStyle : const TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
-            fontSize:15.27, ),
+            fontSize:12.92, ),
+
       ),
 
       autofocus: false,
@@ -124,7 +127,7 @@ class SearchBar extends StatelessWidget {
       style: const TextStyle(
         color: Colors.white,
       ),
-    ));
+    ),);
   }
 }
 
@@ -164,7 +167,7 @@ class HeaderItem extends StatelessWidget {
                   Text("Titan Fall 2 ""Ultimate Edition",
 
                     style: TextStyle(
-                      fontWeight : FontWeight.w600,
+                      fontWeight : FontWeight.bold,
                       color: Colors.white,
                       fontFamily: 'Proxima Nova',
                       fontSize:18.79,
@@ -198,19 +201,32 @@ class HeaderItem extends StatelessWidget {
                     width: 150,
 
                     child  :TextButton(
-                        onPressed: () {},  style: OutlinedButton.styleFrom(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Description (title: 'Description')),
+                          );
+
+                        },  style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
                         backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0)
 
                     ),
                         child: Row(
                           children: const [
-                            Expanded(child: Text('En savoir plus',textAlign: TextAlign.center,
-                                style : TextStyle(
-                                  fontFamily: 'Proxima Nova',
-                                  fontSize: 18.79,
+                            Expanded(child:
+                            SizedBox(
+                              height :35.23,
+                                  width: 162.05,
+                                  child:Center(
+                                    child: Text('En savoir plus',textAlign: TextAlign.center,
+                                      style : TextStyle(
+                                        fontFamily: 'Proxima Nova',
+                                        fontSize: 15.27,
 
-                                ),)),
+                                      ),
+                                  )
+                                )),)
 
                           ],
                         ))
@@ -232,7 +248,7 @@ class Bestseller extends StatelessWidget {
 
       child : Text(
           "Les meilleures ventes",
-          style : TextStyle(color:Colors.white, fontSize: 20, decoration: TextDecoration.underline, )),);
+          style : TextStyle(color:Colors.white, fontFamily: "Proxima Nova", fontSize: 15.27, decoration: TextDecoration.underline, )),);
 
   }
 }
@@ -243,7 +259,7 @@ class GameItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Card(
-      color: Color.fromRGBO(57, 72, 80, 1.0),
+      color: const Color.fromRGBO(57, 72, 80, 1.0),
 
 
       child:
@@ -296,11 +312,11 @@ class GameItem extends StatelessWidget {
 
 
                             Text("Nom du jeu",
-                                style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'ProximaNova-Regular',)),
+                                style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'Proxima Nova',)),
                             Text("Nom de l'éditeur",
-                                style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'ProximaNova-Regular',)),
+                                style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'Proxima Nova',)),
                             Text("Prix : 10,00€",
-                                style : TextStyle(color:Colors.white, fontSize: 12,fontFamily: 'ProximaNova-Regular', decoration: TextDecoration.underline)),
+                                style : TextStyle(color:Colors.white, fontSize: 12,fontFamily: 'Proxima Nova', decoration: TextDecoration.underline)),
 
                           ]
                       ),],),),
@@ -310,6 +326,10 @@ class GameItem extends StatelessWidget {
 
                       Column(
                         children: [
+                          SizedBox(
+                            height: 100.99,
+                     width: 102.15,
+                      child :
 
                           TextButton(
                               onPressed: () {Navigator.push(
@@ -326,11 +346,15 @@ class GameItem extends StatelessWidget {
                               child: Row(
                                 children: const [
 
-                                 Text('En savoir plus',textAlign: TextAlign.center),
+                                 Text('En savoir plus',textAlign: TextAlign.center, style :
+                                 TextStyle(
+                                   fontFamily:"Proxima Nova",
+                                       fontSize: 18.79,
+                                 ),),
 
                                 ],
                               ))
-                        ],
+                          ),],
                       )
 
                     ]

@@ -27,10 +27,10 @@ class _AvisState extends State<Avis> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Détail du jeu ", style : TextStyle( fontFamily: "GoogleSans-Bold",
-          fontSize: 18
-        ),),
+        backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+        title: const Text("Détail du jeu ", style : TextStyle(fontFamily: "Google Sans",
+            fontWeight: FontWeight.bold,
+            fontSize: 18),),
         centerTitle: false,
         actions: [
           IconButton(
@@ -47,7 +47,7 @@ class _AvisState extends State<Avis> {
           )
         ],
       ),
-      backgroundColor: Colors.black87,
+      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
       body: Scrollbar(
         controller: _controller,
         child: CustomScrollView(
@@ -104,7 +104,7 @@ class HeaderItem extends StatelessWidget {
     return Stack(
       children : [
         SizedBox (
-          height: 250,
+          height:  297.1,
           width: MediaQuery.of(context).size.width,
 
           child :
@@ -124,7 +124,7 @@ class HeaderItem extends StatelessWidget {
         Card(
 
           margin :  const EdgeInsets.only(top : 190, left: 15, right: 15),
-          color: Colors.grey,
+          color: const Color.fromRGBO(50, 63, 70, 1.0),
           child : Container(
             decoration: BoxDecoration(
                 border: Border.all(color : Colors.transparent, width: 8)
@@ -165,9 +165,9 @@ class HeaderItem extends StatelessWidget {
 
                     children : const [
                       Text("Nom du jeu",
-                          style : TextStyle(color:Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 15.26)),
+                          style : TextStyle(color:Colors.white, fontFamily : "Proxima Nova", fontSize: 15.26)),
                       Text("Nom de l'éditeur",
-                          style : TextStyle(color:Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 12)),
+                          style : TextStyle(color:Colors.white, fontFamily : "Proxima Nova", fontSize: 12)),
 
                     ]
                 ),],),),),],);
@@ -203,13 +203,14 @@ class Detail extends StatelessWidget {
               shape : MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(0),
-                    side: const BorderSide(color : Colors.deepPurple),
+                    side: const BorderSide( color :  Color.fromRGBO(
+                        99, 106, 246, 1.0)),
                   )
               ),
 
             ),
             child: const Text ("DESCRIPTION", style :
-            TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+            TextStyle(fontWeight: FontWeight.bold,fontFamily : "Google Sans", fontSize: 12.92)),
           ),),
           Expanded(child:
           ElevatedButton(
@@ -220,7 +221,8 @@ class Detail extends StatelessWidget {
 
             },
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
+              backgroundColor: MaterialStateProperty.all<Color>((const Color.fromRGBO(
+                  99, 106, 246, 1.0))),
               minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
               shape : MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
@@ -233,7 +235,7 @@ class Detail extends StatelessWidget {
             ),
             child:
             const Text( "AVIS", style :
-            TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),),
+            TextStyle(fontWeight: FontWeight.bold,fontFamily : "Google Sans", fontSize: 12.92)),),
           )],),);
   }
 }
@@ -245,8 +247,7 @@ class Avisperso extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Card(
-      color: Colors.black45,
-
+      color: const Color.fromRGBO(50, 63, 70, 1.0),
 
       child:
       Column(
@@ -300,7 +301,7 @@ class Avisperso extends StatelessWidget {
                                   ),
 
                                   Text("votre avis.",
-                                      style : TextStyle(color:Colors.white, fontFamily: "ProximaNova-Regular",fontSize: 15.26)),
+                                      style : TextStyle(color:Colors.white, fontFamily: "Proxima Nova",fontSize: 15.26)),
 
                                 ]
                             ),],),],)),

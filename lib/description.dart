@@ -26,8 +26,9 @@ class _DescriptionState extends State<Description> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("Détail du jeu "),
+        backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+        title: const Text("Détail du jeu ",
+        style : TextStyle(fontFamily: "Google Sans", fontWeight: FontWeight.bold, fontSize: 18)),
         centerTitle: false,
         actions: [
           IconButton(
@@ -44,7 +45,7 @@ class _DescriptionState extends State<Description> {
           )
         ],
       ),
-      backgroundColor: Colors.black87,
+      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
       body: Scrollbar(
         controller: _controller,
         child: CustomScrollView(
@@ -96,7 +97,7 @@ class HeaderItem extends StatelessWidget {
     return Stack(
     children : [
       SizedBox (
-        height: 250,
+        height: 297.1,
         width: MediaQuery.of(context).size.width,
 
         child :
@@ -116,7 +117,7 @@ class HeaderItem extends StatelessWidget {
           Card(
 
             margin :  const EdgeInsets.only(top : 190, left: 15, right: 15),
-            color: Colors.grey,
+            color: const Color.fromRGBO(57, 72, 80, 1.0),
               child : Container(
                 decoration: BoxDecoration(
                   border: Border.all(color : Colors.transparent, width: 8)
@@ -157,9 +158,9 @@ class HeaderItem extends StatelessWidget {
 
                       children : const [
                         Text("Nom du jeu",
-                            style : TextStyle(color:Colors.white, fontSize: 15)),
+                            style : TextStyle(color:Colors.white, fontFamily:"Proxima Nova", fontSize : 15.27)),
                         Text("Nom de l'éditeur",
-                            style : TextStyle(color:Colors.white, fontSize: 10)),
+                            style : TextStyle(color:Colors.white,fontFamily:"Proxima Nova", fontSize: 12)),
 
                       ]
                   ),],),),),],);
@@ -188,7 +189,8 @@ class Detail extends StatelessWidget {
 
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurpleAccent),
+                backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(
+                    99, 106, 246, 1.0)),
                 minimumSize: MaterialStateProperty.all<Size>(const Size(334,35)),
                 shape : MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
@@ -200,7 +202,7 @@ class Detail extends StatelessWidget {
 
               ),
               child: const Text ("DESCRIPTION",style :
-              TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+              TextStyle(fontWeight: FontWeight.bold,fontFamily : "Google Sans", fontSize: 12.92)),
             ),),
             Expanded(child:
             ElevatedButton(
@@ -216,14 +218,15 @@ class Detail extends StatelessWidget {
                 shape : MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(0),
-                      side: const BorderSide(color : Colors.deepPurple),
+                      side: const BorderSide(color :  Color.fromRGBO(
+                          99, 106, 246, 1.0)),
                     )
                 ),
 
               ),
               child:
               const Text( "AVIS",style :
-              TextStyle(fontFamily : "GoogleSansBold", fontSize: 12.92)),
+              TextStyle(fontWeight: FontWeight.bold,fontFamily : "Google Sans", fontSize: 12.92)),
             )),],),);
   }
 }
@@ -248,7 +251,7 @@ class Explication extends StatelessWidget {
           "Nous savons également que Kratos et Atreus devront parcourir les Neuf royaumes à la recherche de réponses pour empêcher cette fin du monde. Pendant ce temps, les forces d'Asgard, menées par Freya, se préparent à l'affrontement alors que l'hiver touche à sa fin. Justement, en parlant de fin, celle-ci s'annonce dantesque. Sur Twitter, Cory Barlog a fait savoir que les 30 dernières minutes du jeu sont particulièrement épiques…"
        ,
       textAlign: TextAlign.justify,
-      style: TextStyle(color: Colors.white, fontFamily : "ProximaNova-Regular", fontSize: 15.26),
+      style: TextStyle(color: Colors.white, fontFamily : "Proxima Nova", fontSize: 15.26),
 
         )
       )
