@@ -1,16 +1,13 @@
-# projetv2
+# Application mobile sur les jeux vidéos
 
-A new Flutter project.
+Cette application a été conçu par AGOUZZAL Hassna, BOUZEKRI Ghofrane et EL FETOUAKI Ryan 
 
-## Getting Started
+## Idée du projet
 
-This project is a starting point for a Flutter application.
+Les utilisateurs peuvent s'inscrire ou se connecter sur cette application sur les jeux vidéos. Cette dernière donne des informations concernant les meilleurs jeux avec leur prix, descriptif, noms et image de couverture. L'utilisateur est capable de rechercher des jeux et classer les jeux dans une wishlist ou une liste de like.
 
-A few resources to get you started if this is your first Flutter project:
+Nous avons choisi d'utiliser firebase pour l'authentification des utilisateurs et pour exploiter notre API Steam aussi.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Répartition des tâches
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tout d'abord nous avons commencer à faire le front. Nous avons fait tout les écrans ensemble suite à un problème sur git seul une personne pouvait commit. Ensuite nous avons commencer à nous intéresser à l'authentification via firebase en parallèle de l'utilisation des API Steam. Puis nous sommes revenu sur le front afin d'aller sur les détails et d'embellir le code.
