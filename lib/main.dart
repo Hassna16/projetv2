@@ -6,6 +6,7 @@ import 'package:projetv2/pageconnexion.dart';
 
 void main() {
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
       ),
       home : const Connexion(  title: "Connexion",),
       //home : const Like (title: "ACC",),

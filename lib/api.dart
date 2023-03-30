@@ -83,27 +83,10 @@ class _ApiState extends State<Api> {
 
   @override
   Widget build(BuildContext context) {
-  return Container(
-  height : 300,
-  child: ListView.builder(
-  itemCount: id.length,
-  itemBuilder: (context, index) {
-  return ListTile(
-  leading: Image.network(jeu[index].image),
-  title: Text(jeu[index].nom, style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'Proxima Nova',)),
-  subtitle: Text(jeu[index].editeur+'\n'+jeu[index].prix, style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'Proxima Nova',)),
-  trailing: Container(
-  decoration: BoxDecoration(
-  color: Colors.red,
-  ),
-  child: Text('En savoir plus', style: TextStyle(color: Colors.white)),
-  ),
-  onTap: () {
-  Description(title: 'description',);// Navigate to a new screen to display the game details
-  },
-  );
-  },
-  ),
+  return Column (
+    children : [
+
+    ]
   );
   }
 }
