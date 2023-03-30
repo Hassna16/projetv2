@@ -19,7 +19,6 @@ class _ConnexionState extends State<Connexion> {
   Widget build(BuildContext context) {
 //Page de Connexion
     return Scaffold(
-
       body:Container(
         decoration: BoxDecoration(
             image: DecorationImage(

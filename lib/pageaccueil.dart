@@ -150,7 +150,7 @@ class HeaderItem extends StatelessWidget {
 
           decoration : const BoxDecoration(
               image : DecorationImage(
-                image : NetworkImage("https://i0.wp.com/www.conseilbourse.fr/wp-content/uploads/2021/11/best-of-jeux-video-2014-top_041A02BC01617483.jpg?resize=1024%2C683&ssl=1"
+                image : NetworkImage("https:\/\/cdn.akamai.steamstatic.com\/steam\/apps\/730\/header.jpg?t=1668125812"
                 ),
                 fit : BoxFit.cover,
               )
@@ -164,12 +164,13 @@ class HeaderItem extends StatelessWidget {
                 const PositionedDirectional(
 
                   start: 25,
+                  end : 25,
                   top: 80,
                   width: 250,
 
                   child :
 
-                  Text("Titan Fall 2 ""Ultimate Edition",
+                  Text("Counterstrike",
 
                     style: TextStyle(
                       fontWeight : FontWeight.bold,
@@ -187,7 +188,7 @@ class HeaderItem extends StatelessWidget {
 
                   child :
 
-                  const Text("DESCRIPTION",
+                  const Text("Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
 
 
 
