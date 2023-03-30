@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projetv2/wishlist.dart';
 import 'package:projetv2/like.dart';
 import 'package:projetv2/description.dart';
+import 'package:projetv2/api.dart';
 
 
 class Accueil extends StatefulWidget {
@@ -62,11 +63,15 @@ class _AccueilState extends State<Accueil> {
               child: Bestseller(),
             ),
 
-            SliverList(
+            SliverToBoxAdapter(
+              child : Api(),
+            )
+
+            /*SliverList(
               delegate: SliverChildListDelegate(
                 List.generate(100, (index) => const GameItem()),
               ),
-            )
+            )*/
           ],
         ),
       ),
@@ -252,120 +257,3 @@ class Bestseller extends StatelessWidget {
 
   }
 }
-
-class GameItem extends StatelessWidget {
-  const GameItem({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return  Card(
-      color: const Color.fromRGBO(57, 72, 80, 1.0),
-
-
-      child:
-      Column(
-          children: [
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
-                child: Row(
-
-
-                    children : [
-                      Expanded(
-              child :
-                      // Texte + image
-                      Row(
-                        children :[
-                      Column(
-                        children :[
-                          SizedBox (
-                            height: 80,
-                            width: 80,
-
-                            child :
-                            Container(
-
-                              decoration : const BoxDecoration(
-                                  image : DecorationImage(
-                                    image : NetworkImage("https://m.media-amazon.com/images/I/71h-xYqRKmL._AC_SX342_SY445_.jpg"
-                                    ),
-                                    fit : BoxFit.cover,
-                                  )
-                              ),
-
-
-                            ),),],),
-
-                      Column(
-                        children: const [
-                          SizedBox(
-                            width: 10,
-                          ),
-                        ],
-
-                      ),
-
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-
-                          children : const [
-
-
-                            Text("Nom du jeu",
-                                style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'Proxima Nova',)),
-                            Text("Nom de l'éditeur",
-                                style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'Proxima Nova',)),
-                            Text("Prix : 10,00€",
-                                style : TextStyle(color:Colors.white, fontSize: 12,fontFamily: 'Proxima Nova', decoration: TextDecoration.underline)),
-
-                          ]
-                      ),],),),
-                      // Texte + image FIN
-
-
-
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: 100.99,
-                     width: 102.15,
-                      child :
-
-                          TextButton(
-                              onPressed: () {Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => const Description (title: 'Description')),
-                              );
-
-                              },
-                              style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                              backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0),
-                             minimumSize: const Size(100,100)
-                          ),
-                              child: Row(
-                                children: const [
-
-                                 Text('En savoir plus',textAlign: TextAlign.center, style :
-                                 TextStyle(
-                                   fontFamily:"Proxima Nova",
-                                       fontSize: 18.79,
-                                 ),),
-
-                                ],
-                              ))
-                          ),],
-                      )
-
-                    ]
-
-                )
-
-            ),
-
-          ]
-      ),
-    );
-  }
-}
-
