@@ -17,12 +17,12 @@ class Accueil extends StatefulWidget {
 
 class _AccueilState extends State<Accueil> {
   final ScrollController _controller = ScrollController();
-  bool _favoris = false;
-  bool _star = false;
+  final bool _favoris = false;
+  final bool _star = false;
 
   @override
   Widget build(BuildContext context) {
-    // Page Accueil
+
 
     return Scaffold(
       appBar: AppBar(
@@ -46,33 +46,20 @@ class _AccueilState extends State<Accueil> {
           )
         ],
       ),
-      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+      backgroundColor: const Color.fromRGBO(26, 32, 37, 1.0),
       body: Scrollbar(
         controller: _controller,
-        child: CustomScrollView(
-          controller: _controller,
-          slivers: [
-
-            const SliverToBoxAdapter(
-              child: SearchBar(),
-            ),
-            const SliverToBoxAdapter(
-              child: HeaderItem(),
-            ),
-            const SliverToBoxAdapter(
-              child: Bestseller(),
-            ),
-
-            SliverToBoxAdapter(
-              child : Api(),
-            )
-
-            /*SliverList(
-              delegate: SliverChildListDelegate(
-                List.generate(100, (index) => const GameItem()),
+        child: ListView(
+            children : const[
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15),
+                child: SearchBar(),
               ),
-            )*/
-          ],
+
+              HeaderItem(),
+              Bestseller(),
+              Api(),
+            ]
         ),
       ),
     );
@@ -94,47 +81,54 @@ class _AccueilState extends State<Accueil> {
   }
 }
 
+
+
 class SearchBar extends StatelessWidget {
   const SearchBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return
-    SizedBox(
-      height:35.23,
-    width: 352.29,
-    child :
-      TextField(
+      SizedBox(
+        height:35.23,
+        width: 352.29,
+        child :
+        TextField(
 
 
-      decoration: InputDecoration(
-        suffixIcon: IconButton(
-            onPressed: (){
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Accueil (title: 'Accueil')),
-            );
-            },
-            icon: const Icon(Icons.search)),
-          filled: true,
-          fillColor:  const  Color.fromRGBO(0, 3, 100, 1.0),
-          focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+                color : const Color.fromRGBO(99, 106, 246, 1.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Accueil (title: 'Accueil')),
+                  );
+                },
+                icon: const Icon(Icons.search)),
+            filled: true,
+            fillColor:  const  Color.fromRGBO(30, 38, 44, 1.0),
+            focusedBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.transparent),
+            ),
+
+            hintText: 'Rechercher un jeu...',
+            contentPadding: const EdgeInsets.symmetric(vertical: 3, horizontal: 8),
+            hintStyle : const TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
+              fontSize:12.92, ),
+
           ),
-          hintText: 'Rechercher un jeu...',
-          hintStyle : const TextStyle(color: Colors.white, fontFamily: 'Proxima Nova',
-            fontSize:12.92, ),
 
-      ),
-
-      autofocus: false,
-      cursorColor: Colors.white,
-      style: const TextStyle(
-        color: Colors.white,
-      ),
-    ),);
+          autofocus: false,
+          cursorColor: Colors.white,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),);
   }
 }
+
+// Affiche du meilleur jeu avec bouton en savoir plus
 
 class HeaderItem extends StatelessWidget {
   const HeaderItem({Key? key}) : super(key: key);
@@ -164,13 +158,12 @@ class HeaderItem extends StatelessWidget {
                 const PositionedDirectional(
 
                   start: 25,
-                  end : 25,
                   top: 80,
                   width: 250,
 
                   child :
 
-                  Text("Counterstrike",
+                  Text("Counter Strike",
 
                     style: TextStyle(
                       fontWeight : FontWeight.bold,
@@ -183,9 +176,8 @@ class HeaderItem extends StatelessWidget {
                 Positioned.directional(
                   textDirection: Directionality.of(context),
                   start: 25,
-
+                  end: 25,
                   top: 150,
-
                   child :
 
                   const Text("Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
@@ -222,16 +214,16 @@ class HeaderItem extends StatelessWidget {
                           children: const [
                             Expanded(child:
                             SizedBox(
-                              height :35.23,
-                                  width: 162.05,
-                                  child:Center(
+                                height :35.23,
+                                width: 162.05,
+                                child:Center(
                                     child: Text('En savoir plus',textAlign: TextAlign.center,
                                       style : TextStyle(
                                         fontFamily: 'Proxima Nova',
                                         fontSize: 15.27,
 
                                       ),
-                                  )
+                                    )
                                 )),)
 
                           ],

@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:projetv2/description.dart';
 
 class Api extends StatefulWidget {
+  const Api({super.key});
+
   @override
   _ApiState createState() => _ApiState();
 }
@@ -19,7 +21,6 @@ class _ApiState extends State<Api> {
 
 
   void meilleursid() async {
-    print('Debut');
     try{
       const url =
           'https://api.steampowered.com/ISteamChartsService/GetMostPlayedGames/v1/';
@@ -30,15 +31,16 @@ class _ApiState extends State<Api> {
       setState(() {
         id = json.map((item) => item['appid'].toString()).toList();
       });
-      print(id);
       donnees();
     } catch(err, trace){
-      print(err);
+
     }
   }
 
+//Récupération des données de l'API
+
   void donnees() async {
-    print('Debut');
+
     for (int i = 0; i <= 99; i++) {
       try {
 
@@ -65,7 +67,7 @@ class _ApiState extends State<Api> {
         print(err);
       }
     }
-    print('fin');
+
   }
 
 
@@ -74,28 +76,50 @@ class _ApiState extends State<Api> {
   void initState() {
     super.initState();
     meilleursid();
-    // appel automatique de la fonction lors de l'initialisation de l'interface utilisateur
+    //Appel automatique de la fonction lors de l'initialisation de l'interface utilisateur
   }
 
 
-
+//Liste des jeux
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 400,
       child: ListView.builder(
         itemCount: id.length,
         itemBuilder: (context, index) {
           return Card(
             color: const Color.fromRGBO(57, 72, 80, 1.0),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
-              child: ListTile(
-                leading: Image.network(jeu[index].image),
-                title: Text(jeu[index].nom, style : TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'Proxima Nova',)),
-                subtitle: Text(jeu[index].editeur+'\n'+jeu[index].prix, style : TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'Proxima Nova',)),
-                trailing: Container(
+            child: Row(
+              children: [
+                Expanded(
+                  child: Row(
+                    children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                          height: 80,
+                          child: Image.network(jeu[index].image)
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(jeu[index].nom, textAlign:TextAlign.left, style : const TextStyle(color:Colors.white, fontSize: 15.27,fontFamily: 'Proxima Nova',)),
+                          Text(jeu[index].editeur+'\n'+jeu[index].prix, textAlign:TextAlign.left, style : const TextStyle(color:Colors.white, fontSize: 12, fontFamily: 'Proxima Nova',)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(
+                  height: 100,
+                  width: 100,
                   child: TextButton(
                     onPressed: () {Navigator.push(
                       context,
@@ -103,20 +127,21 @@ class _ApiState extends State<Api> {
                     );
                     },
                     style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      foregroundColor: Colors.white, shape: const ContinuousRectangleBorder(),
                       backgroundColor:const Color.fromRGBO(97, 104, 237, 1.0),
                     ),
-                    child: Text('En savoir plus',textAlign: TextAlign.center, style :
+                    child: const Text('En savoir plus',textAlign: TextAlign.center, style :
                     TextStyle(
                       fontFamily:"Proxima Nova",
                       fontSize: 18.79,
-                    ),),
-
+                    ),
+                    ),
                   ),
 
                 ),
-              ),
-            ),);
+              ],
+            ),
+          );
         },
       ),
     );

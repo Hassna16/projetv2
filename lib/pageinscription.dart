@@ -22,7 +22,7 @@ class _InscriptionState extends State<Inscription> {
     return Scaffold(
         backgroundColor: Colors.black87,
         body:Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/fonddecran.png"),
                 fit: BoxFit.cover,)),
@@ -56,9 +56,9 @@ class titre_page extends StatelessWidget {
 
 
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const[
 
-                const SizedBox.square(
+                 SizedBox.square(
                   dimension: 50.0,
                 ),
                 Text( 'Inscription',
@@ -119,10 +119,13 @@ class champs_inscription extends StatelessWidget {
                     width: 2000,
 
                     child  :TextButton(
-                        onPressed: () {},
+                        onPressed: () {},style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+                    ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Expanded(child: TextField(
                               textAlign : TextAlign.center,
                               decoration : InputDecoration(
@@ -139,13 +142,9 @@ class champs_inscription extends StatelessWidget {
 
                             ),
                             )],
-                        ),style: OutlinedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
-                    ))),
+                        ))),
 
-                SizedBox.square(
+                const SizedBox.square(
                   dimension: 10.0,
                 ),
 // E-Mail
@@ -154,10 +153,13 @@ class champs_inscription extends StatelessWidget {
                     width: 2000,
 
                     child  :TextButton(
-                        onPressed: () {},
+                        onPressed: () {},style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+                    ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Expanded(child: TextField(
                               textAlign : TextAlign.center,
                               decoration : InputDecoration(
@@ -174,14 +176,10 @@ class champs_inscription extends StatelessWidget {
 
                             ),
                             )],
-                        ),style: OutlinedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
-                    ))),
+                        ))),
 
 
-                SizedBox.square(
+                const SizedBox.square(
                   dimension: 10.0,
                 ),
 
@@ -190,10 +188,13 @@ class champs_inscription extends StatelessWidget {
                     width: 2000,
 
                     child  :TextButton(
-                        onPressed: () {},
+                        onPressed: () {},style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+                    ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Expanded(child: TextField(
                               textAlign : TextAlign.center,
                               obscureText: true,
@@ -211,14 +212,10 @@ class champs_inscription extends StatelessWidget {
 
                             ),
                             )],
-                        ),style: OutlinedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
-                    ))),
+                        ))),
 
 
-                SizedBox.square(
+                const SizedBox.square(
                   dimension: 10.0,
                 ),
 
@@ -227,10 +224,13 @@ class champs_inscription extends StatelessWidget {
                     width: 2000,
 
                     child  :TextButton(
-                        onPressed: () {},
+                        onPressed: () {},style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+                      backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+                    ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          children: const [
                             Expanded(child: TextField(
                               textAlign : TextAlign.center,
                               obscureText: true,
@@ -248,13 +248,9 @@ class champs_inscription extends StatelessWidget {
 
                             ),
                             )],
-                        ),style: OutlinedButton.styleFrom(
-                      primary: Colors.white,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-                      backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
-                    ))),
+                        ))),
 
-                SizedBox.square(
+                const SizedBox.square(
                   dimension: 80.0,
                 ),
           ]),),);
@@ -286,10 +282,15 @@ class btn_inscription extends StatelessWidget {
                     child  :TextButton(
                         onPressed: () {Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) =>  Accueil(title: 'Accueil')),
-                        );},
+                          MaterialPageRoute(builder: (context) =>  const Accueil(title: 'Accueil')),
+                        );},  style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.white, shape:  RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      backgroundColor:const Color.fromRGBO(99, 106, 246, 1.0),
+                    ),
                         child: Row(
-                          children: [
+                          children: const [
                             Expanded(child: Text("S'inscrire",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -299,13 +300,7 @@ class btn_inscription extends StatelessWidget {
 
 
                           ],
-                        ),  style: OutlinedButton.styleFrom(
-                      primary: Colors.white,
-                      shape:  RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      backgroundColor:Color.fromRGBO(99, 106, 246, 1.0),
-                    ))),
+                        ))),
 
 
 

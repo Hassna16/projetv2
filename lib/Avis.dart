@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projetv2/wishlist.dart';
-import 'package:projetv2/like.dart';
 import 'package:projetv2/description.dart';
-import 'pageaccueil.dart';
+
 
 
 class Avis extends StatefulWidget {
@@ -19,6 +17,30 @@ class _AvisState extends State<Avis> {
   final ScrollController _controller = ScrollController();
   bool _favoris = false;
   bool _star = false;
+
+  void fav (){
+    setState(() {
+
+      if (_favoris){
+        _favoris=false;
+
+      }
+      else {
+        _favoris= true;
+      }
+    });
+  }
+  void etoile(){
+    setState(() {
+
+      if (_star){
+        _star=false;
+      }
+      else {
+        _star= true;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,20 +99,7 @@ class _AvisState extends State<Avis> {
     );
   }
 
-  void fav() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Like (title: 'Like')),
-    );
-  }
 
-  void etoile() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Wishlist (title: 'Wishlist')),
-    );
-
-  }
 }
 
 
@@ -254,68 +263,28 @@ class Avisperso extends StatelessWidget {
           children: [
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
-                child: Row(
+                child:
 
-
-                    children : [
-                      Expanded(
-                        child :
-                        // Texte + image
-                        Row(
-                          children :[
-                            Column(
-                              children :[
-                                const SizedBox (
-                                  height: 80,
-                                  width: 80,
-
+                Row(
+                            children :const [
+                                  SizedBox(
+                                    width: 10,
                                   ),
-
-                            Column(
-                              children: const [
-                                SizedBox(
-                                  width: 10,
-                                ),
-                              ],
-
-                            ),
-
-                           Column(
-
-                                children :  [
-                                  Row(
-                                    children: <Widget>[
-                                      Text("Nom de l'utilisateur",
-                                          style : TextStyle(color:Colors.white, fontSize: 15,)),
-                                      SizedBox(
-                                        width: 200,
+                            Expanded(
+                               child: Text("Nom de l'utilisateur",
+                                              style : TextStyle(color:Colors.white, fontSize: 15,)),
+                             ),
+                                          Icon(Icons.star, color: Colors.yellow),
+                                          Icon(Icons.star, color: Colors.yellow),
+                                          Icon(Icons.star, color: Colors.yellow),
+                                          Icon(Icons.star, color: Colors.yellow),
+                                          Icon(Icons.star_border, color: Colors.yellow),
+                                        ],
                                       ),
+    ),
+            const Text("Votre avis.",
+                style :  TextStyle(color:Colors.white, fontFamily: "Proxima Nova",fontSize: 15.26)),],
+                        ));
 
-
-                                      Icon(Icons.star, color: Colors.yellow),
-                                      Icon(Icons.star, color: Colors.yellow),
-                                      Icon(Icons.star, color: Colors.yellow),
-                                      Icon(Icons.star, color: Colors.yellow),
-                                      Icon(Icons.star_border, color: Colors.yellow),
-                                    ],
-                                  ),
-
-                                  Text("votre avis.",
-                                      style : TextStyle(color:Colors.white, fontFamily: "Proxima Nova",fontSize: 15.26)),
-
-                                ]
-                            ),],),],)),
-                      // Texte + image FIN
-
-
-                    ]
-
-                )
-
-            ),
-
-          ]
-      ),
-    );
   }
 }

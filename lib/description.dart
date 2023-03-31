@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'like.dart';
-import 'wishlist.dart';
 import 'package:projetv2/Avis.dart';
-
 
 
 class Description extends StatefulWidget {
@@ -17,12 +14,37 @@ class Description extends StatefulWidget {
 
 class _DescriptionState extends State<Description> {
   final ScrollController _controller = ScrollController();
-  final bool _favoris = false;
-  final bool _star = false;
+   bool _favoris = false;
+   bool _star = false;
+
+  void fav (){
+    setState(() {
+
+      if (_favoris){
+        _favoris=false;
+
+      }
+      else {
+        _favoris= true;
+      }
+    });
+  }
+  void etoile(){
+    setState(() {
+
+      if (_star){
+        _star=false;
+      }
+      else {
+        _star= true;
+      }
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    // Page de descritpion
+
 
     return Scaffold(
       appBar: AppBar(
@@ -48,46 +70,23 @@ class _DescriptionState extends State<Description> {
       backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
       body: Scrollbar(
         controller: _controller,
-        child: CustomScrollView(
-          controller: _controller,
-          slivers: const [
-
-             SliverToBoxAdapter(
-              child: HeaderItem(),
-            ),
-             SliverToBoxAdapter(
-              child: Detail(),
-            ),
-            SliverToBoxAdapter(
-              child: Explication(),
-
-            ),
+        child: ListView(
+          children :const [
+           HeaderItem(),
+           Detail(),
+           Explication(),
+            ]
+        )
 
 
-          ],
-        ),
       ),
     );
   }
 
-  void fav() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Like (title: 'Like')),
-    );
-  }
 
-  void etoile() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Wishlist (title: 'Wishlist')),
-    );
-
-  }
 }
 
-
-
+//Affiche du jeu
 
 class HeaderItem extends StatelessWidget {
   const HeaderItem({Key? key}) : super(key: key);
@@ -157,7 +156,7 @@ class HeaderItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
 
                       children : const [
-                        Text("Nom du jeu",
+                        Text("GOD OF WAR",
                             style : TextStyle(color:Colors.white, fontFamily:"Proxima Nova", fontSize : 15.27)),
                         Text("Nom de l'éditeur",
                             style : TextStyle(color:Colors.white,fontFamily:"Proxima Nova", fontSize: 12)),
@@ -167,6 +166,9 @@ class HeaderItem extends StatelessWidget {
 
   }
 }
+
+
+// Bouton avis/description
 
 class Detail extends StatelessWidget {
   const Detail({Key? key}) : super(key: key);
@@ -231,14 +233,14 @@ class Detail extends StatelessWidget {
   }
 }
 
-
+// Description du jeu
 class Explication extends StatelessWidget {
   const Explication({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return
-      Padding(
+      const Padding(
         padding:  EdgeInsets.all(20),
 
      child :

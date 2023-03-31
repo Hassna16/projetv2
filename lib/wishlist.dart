@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projetv2/description.dart';
-
-
 
 class Wishlist extends StatefulWidget {
   const Wishlist ({super.key, required this.title});
@@ -14,7 +11,6 @@ class Wishlist extends StatefulWidget {
 }
 
 class _WishlistState extends State<Wishlist> {
-  final ScrollController _controller = ScrollController();
 
 
   @override

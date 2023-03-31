@@ -20,7 +20,7 @@ class _ConnexionState extends State<Connexion> {
 //Page de Connexion
     return Scaffold(
       body:Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/fonddecran.png"),
               fit: BoxFit.cover,)),
@@ -29,7 +29,7 @@ class _ConnexionState extends State<Connexion> {
             children : const [
               titre_page(),
               champs_connexion(),
-              mdp(),
+              Mdp(),
             ]),
       ),)
     ;}
@@ -107,7 +107,7 @@ child: Column(
 mainAxisSize: MainAxisSize.min,
 children: <Widget>[
 
-SizedBox.square(
+const SizedBox.square(
 dimension: 10.0,
 ),
 SizedBox(
@@ -115,7 +115,10 @@ height: 45,
 width: 2000,
 
 child  :TextButton(
-onPressed: () {},
+onPressed: () {},style: OutlinedButton.styleFrom(
+foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+),
 child: Row(
 mainAxisAlignment: MainAxisAlignment.center,
 children: const [
@@ -137,14 +140,10 @@ cursorColor: Colors.white,
 
 ),
 )],
-),style: OutlinedButton.styleFrom(
-primary: Colors.white,
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
 ))),
 
 
-SizedBox.square(
+const SizedBox.square(
 dimension: 10.0,
 ),
 // MOT DE PASSE
@@ -153,10 +152,13 @@ height: 45,
 width: 2000,
 
 child  :TextButton(
-onPressed: () {},
+onPressed: () {},style: OutlinedButton.styleFrom(
+foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
+  backgroundColor: const Color.fromRGBO(30, 38, 44, 1.0),
+),
 child: Row(
 mainAxisAlignment: MainAxisAlignment.center,
-children: [
+children: const [
 Expanded(child: TextField(
 textAlign : TextAlign.center,
 obscureText: true,
@@ -175,13 +177,9 @@ cursorColor: Colors.white,
 
 ),
 )],
-),style: OutlinedButton.styleFrom(
-primary: Colors.white,
-shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5),),
-  backgroundColor: Color.fromRGBO(30, 38, 44, 1.0),
 ))),
 
-SizedBox.square(
+const SizedBox.square(
 dimension: 100.0,
 ),
 
@@ -193,24 +191,23 @@ onPressed: (
 
 ) {Navigator.push(
 context,
-MaterialPageRoute(builder: (context) => Accueil (title: 'Accueil')),
-);},
+MaterialPageRoute(builder: (context) => const Accueil (title: 'Accueil')),
+);},  style: OutlinedButton.styleFrom(
+foregroundColor: Colors.white, shape:  RoundedRectangleBorder(
+borderRadius: BorderRadius.circular(5),
+),
+backgroundColor:const Color.fromRGBO(99, 106, 246, 1.0),
+),
 child: Row(
-children: [
-Expanded(child: Text('Se connecter',textAlign: TextAlign.center, style:
+children: const [
+ Expanded(child: Text('Se connecter',textAlign: TextAlign.center, style:
 TextStyle(fontFamily: 'Proxima Nova', fontSize:15.24))),
 
 ],
-),  style: OutlinedButton.styleFrom(
-primary: Colors.white,
-shape:  RoundedRectangleBorder(
-borderRadius: BorderRadius.circular(5),
-),
-backgroundColor:Color.fromRGBO(99, 106, 246, 1.0),
 ))),
 
 
-SizedBox.square(
+const SizedBox.square(
 dimension: 10.0,
 ),
 
@@ -221,22 +218,21 @@ child  :TextButton(
 onPressed: () {
 Navigator.push(
 context,
-MaterialPageRoute(builder: (context) =>  Inscription(title: 'Inscription')),
+MaterialPageRoute(builder: (context) =>  const Inscription(title: 'Inscription')),
 );
-},
-child: Row(
-children: [
-Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center, style:
-TextStyle(fontFamily: 'Proxima Nova', fontSize:15.24))),
-
-],
-),  style: OutlinedButton.styleFrom(
-primary: Colors.white,
-shape: RoundedRectangleBorder(
+},  style: OutlinedButton.styleFrom(
+foregroundColor: Colors.white, shape: RoundedRectangleBorder(
 borderRadius: BorderRadius.circular(5),
 ),
-side : BorderSide(color : Color.fromRGBO(99, 106, 246, 1.0)),
+side : const BorderSide(color : Color.fromRGBO(99, 106, 246, 1.0)),
 backgroundColor: Colors.transparent,
+),
+child: Row(
+children: const [
+ Expanded(child: Text('Créer un nouveau compte',textAlign: TextAlign.center, style:
+ TextStyle(fontFamily: 'Proxima Nova', fontSize:15.24))),
+
+],
 ))),
 
 
@@ -249,8 +245,8 @@ backgroundColor: Colors.transparent,
 
 }}
 
-class mdp extends StatelessWidget {
-  const mdp({Key? key}) : super(key: key);
+class Mdp extends StatelessWidget {
+  const Mdp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
