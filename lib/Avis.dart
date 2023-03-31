@@ -173,7 +173,7 @@ class HeaderItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
 
                     children : const [
-                      Text("Nom du jeu",
+                      Text("GOD OF WAR",
                           style : TextStyle(color:Colors.white, fontFamily : "Proxima Nova", fontSize: 15.26)),
                       Text("Nom de l'éditeur",
                           style : TextStyle(color:Colors.white, fontFamily : "Proxima Nova", fontSize: 12)),

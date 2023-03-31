@@ -84,7 +84,7 @@ class titre_page extends StatelessWidget {
 
 
       ]),),
-// This trailing comma makes auto-formatting nicer for build methods.
+
     );
 
   }}
@@ -256,7 +256,7 @@ class Mdp extends StatelessWidget {
       Align(
           alignment: FractionalOffset.bottomCenter,
           child: Padding(
-              padding: EdgeInsets.only(top: 200.0),
+              padding: EdgeInsets.only(top: 150.0),
               child: Text("Mot de passe oublié",
                 style : TextStyle(
                   decoration :TextDecoration.underline,

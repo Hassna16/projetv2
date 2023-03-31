@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projetv2/pageconnexion.dart';
-//import 'testgpt.dart';
-//import 'package:projetv2/api.dart';
+
 
 
 void main() {
@@ -23,9 +22,6 @@ class MyApp extends StatelessWidget {
 
       ),
       home : const Connexion(  title: "Connexion",),
-      //home : const Like (title: "ACC",),
-
-      //home:  Api(),//Pour tester codes chatgpt,
 
 
     );
