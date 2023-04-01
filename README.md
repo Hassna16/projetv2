@@ -21,7 +21,7 @@ L'émulateur nous a causé un nombre conséquent d'erreur dont la résolution ne
 
 N'ayant pas pu vérifier nos résultats sur l'émulateur, après nous être démenenés durant plusieurs semaines sans que personne ne puisse nous débloquer, nous avons choisi de nous concentrer sur d'autres éléments. Il est vrai que notre matériel ne nous permettait pas d'avancer pour des raisons que nous ignorons toujours.
 
-* Api
+*Api
 
 Difficulté d'apprehension de l'api : nous ne visualisions pas comment toutes les utiliser et nous n'avons pas compris comme effectuer la récupération des données  en les retournant dans des pages différentes.
 
